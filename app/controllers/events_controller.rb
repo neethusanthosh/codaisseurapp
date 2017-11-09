@@ -34,7 +34,7 @@ class EventsController < ApplicationController
 
   private
 
-  def set_room
+  def set_event
     @event = Event.find(params[:id])
   end
 
@@ -43,8 +43,6 @@ class EventsController < ApplicationController
       .require(:event)
       .permit(
         :name, :description, :location, :price, :capacity, :includes_food,
-        :includes_drinks, :starts_at, :ends_at, :active
-      )
+        :includes_drinks, :starts_at, :ends_at, :active)
   end
-end
 end
