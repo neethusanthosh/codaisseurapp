@@ -1,14 +1,14 @@
 FactoryGirl.define do
-  factory :room do
+  factory :event do
     name              "Name"
     description       { Faker::Lorem.sentence(40) }
-    location          { Faker::Location.city }
+    location          { Faker::Address.city }
     price             100
     capacity          50
     includes_food     true
     includes_drinks   true
-    starts_at         6/10/2018
-    ends_at           8/10/2018        
+    starts_at         DateTime.new(2018,10,4)
+    ends_at           DateTime.new(2018,10,6)
     user              { build(:user) }
 
     trait :active do
