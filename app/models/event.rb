@@ -16,4 +16,11 @@ validate :you_are_planning_the_past
  def startdate_before_enddate?
     ends_at - starts_at >= 1
   end
+  after_initialize :set_default_values
+  def set_default_values
+    self.price  ||= 0.0
+   self.includes_food ||= false
+    self.includes_drinks ||= false
+    self.active ||= true
+  end
 end
